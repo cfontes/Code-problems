@@ -5,16 +5,42 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * 
+ * Binary tree implementation for solving code challenges
+ * 
+ * 
+ * @author Cristiano
+ * 
+ */
 public class BinaryTree {
 
+	/**
+	 * Constructor
+	 */
 	public BinaryTree() {
 	}
 
+	/**
+	 * Contructor
+	 * 
+	 * @param items
+	 *            list of items of the tree
+	 */
 	public BinaryTree(List<Integer> items) {
 		this();
 		create(items);
 	}
 
+	/**
+	 * Create a tree with the items passed in the order of the List and values based on the list content but not equal
+	 * to it
+	 * 
+	 * @param items
+	 *            list of integers to be in the tree
+	 * @return {@link TreeNode} with the root node of the tree
+	 * @author Cristiano
+	 */
 	public TreeNode create(List<Integer> items) {
 		TreeNode root = new TreeNode(null, items.get(0), null);
 
@@ -42,6 +68,28 @@ public class BinaryTree {
 		return root;
 	}
 
+	/**
+	 * Creates a Tree that follows OJLeetCode tree specs where {1,2,3,#,4,5,6} means:
+	 * 
+	 * <pre>
+	 *      1
+	 *     / \
+	 *    2   3
+	 *   /   / \
+	 *  4   5   6
+	 * </pre>
+	 * 
+	 * <p>
+	 * So # skip a place and the list is left to right and level by level.
+	 * 
+	 * <p>
+	 * in case of empty list null is returned.
+	 * 
+	 * @param values
+	 *            list of strings to use as base for the tree
+	 * @return root tree node
+	 * @author Cristiano
+	 */
 	public TreeNode createOJTree(List<String> values) {
 		ArrayList<String> items = new ArrayList<String>(values);
 

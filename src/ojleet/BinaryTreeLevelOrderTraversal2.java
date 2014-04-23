@@ -6,6 +6,8 @@ import java.util.Stack;
 public class BinaryTreeLevelOrderTraversal2 {
 
 	/**
+	 * Couldn't make this one work yet...
+	 * 
 	 * @param args
 	 * @author Cristiano
 	 */
@@ -14,7 +16,7 @@ public class BinaryTreeLevelOrderTraversal2 {
 	}
 
 	public BinaryTreeLevelOrderTraversal2() {
-		ArrayList<ArrayList<Integer>> treeOutput;
+
 		int x = 5;
 		int i = 1;
 		ArrayList<Integer> list = new ArrayList<Integer>();
@@ -24,6 +26,18 @@ public class BinaryTreeLevelOrderTraversal2 {
 		}
 		BinaryTree tree = new BinaryTree();
 		TreeNode root = tree.create(list);
+		this.printTree(root);
+
+	}
+
+	/**
+	 * Prints the tree to console
+	 * 
+	 * @param root
+	 * @author Cristiano
+	 */
+	public void printTree(TreeNode root) {
+		ArrayList<ArrayList<Integer>> treeOutput;
 		treeOutput = levelOrderBottom(root);
 		for (ArrayList<Integer> level : treeOutput) {
 			System.out.print("[");
@@ -33,9 +47,16 @@ public class BinaryTreeLevelOrderTraversal2 {
 			System.out.print("]");
 			System.out.println();
 		}
-
 	}
 
+	/**
+	 * Transforms a tree into a inverse tree as an arraylist of levels
+	 * 
+	 * @param root
+	 *            of the tree
+	 * @return inversed tree as an ArrayList
+	 * @author Cristiano
+	 */
 	public ArrayList<ArrayList<Integer>> levelOrderBottom(TreeNode root) {
 		ArrayList<ArrayList<Integer>> tree = new ArrayList<ArrayList<Integer>>();
 		Stack<Integer> stack = new Stack<Integer>();
@@ -69,6 +90,16 @@ public class BinaryTreeLevelOrderTraversal2 {
 		return tree;
 	}
 
+	/**
+	 * Iterate the tree turning it into a stack.
+	 * 
+	 * @param root
+	 *            Root node of the tree
+	 * @param stack
+	 *            with the branches already read
+	 * @return a stack with all branches
+	 * @author Cristiano
+	 */
 	public Stack<Integer> iterateAll(TreeNode root, Stack<Integer> stack) {
 		if (root != null) {
 			stack.push(root.val);

@@ -14,6 +14,16 @@ public class TwoSum {
 		System.out.println(ts.twoSum(new int[] { 5, 75, 25 }, 100));
 	}
 
+	/**
+	 * Two sum implementation
+	 * 
+	 * @param numbers
+	 *            possible sum options
+	 * @param target
+	 *            result to find
+	 * @return array of 2 items that result in target
+	 * @author Cristiano
+	 */
 	public int[] twoSum(int[] numbers, int target) {
 
 		HashMap<Integer, Integer> values = new HashMap<Integer, Integer>();

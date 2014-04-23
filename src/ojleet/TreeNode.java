@@ -1,5 +1,11 @@
 package ojleet;
 
+/**
+ * Node of a tree
+ * 
+ * @author Cristiano
+ * 
+ */
 public class TreeNode {
 
 	public int val;
